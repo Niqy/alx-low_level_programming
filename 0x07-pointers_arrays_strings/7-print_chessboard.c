@@ -1,23 +1,18 @@
 #include "main.h"
+
 /**
- * print_chessboard - function that prints the chessboard.
- * @a: bidimensional array
- * Return: void.
+ * print_chessboard - prints chessboard
+ * @a: double pointer
+ * Return: 0
  */
 void print_chessboard(char (*a)[8])
 {
-	int i = 0;
-	int j = 0;
+	unsigned int i, j;
 
 	for (i = 0; i < 8; i++)
 	{
 		for (j = 0; j < 8; j++)
-		{
-			if (a[i][j] != '\0')
-			{
-				_putchar(a[i][j]);
-			}
-		}
-		_putchar('\n');
+			_putchar(a[i][j]);
+			_putchar('\n');
 	}
 }
