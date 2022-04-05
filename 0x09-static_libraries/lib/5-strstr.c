@@ -1,6 +1,25 @@
 #include "main.h"
 
-char *_strstr(char *haystack __attribute__((unused)), char * needle __attribute__((unused)))
+/**
+ * _strstr -  function that  locates a substring.
+ * @haystack: puntero a cadena de caracteres.
+ * @needle: localizador de caracteres a considerar.
+ * Return: 0.
+ */
+
+char *_strstr(char *haystack, char *needle)
 {
-	return 0;
+	int i, j;
+
+	for (i = 0; haystack[i] != '\0'; i++)
+	{
+		for (j = 0; needle[j] != '\0'; j++)
+		{
+			if (haystack[i + j] != needle[j])
+				break;
+		}
+		if (needle[j] == '\0')
+			return (&haystack[i]);
+	}
+	return (0);
 }
